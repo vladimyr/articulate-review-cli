@@ -7,13 +7,13 @@ This CLI enables easy download of storyline archives directly from [Articulate R
 ## Installation
 
 ```
-$ npm install -g articulate-review-cli
+$ npm install -g vladimyr/articulate-review-cli
 ```
 
 Or for a one-time run:
 
 ```
-$ npx articulate-review-cli
+$ npx vladimyr/articulate-review-cli
 ```
 
 ## Usage
