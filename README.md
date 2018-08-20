@@ -22,3 +22,8 @@ $ npx vladimyr/articulate-review-cli
 $ articulate-review-cli <storyId> <archivePath>
 ```
 
+To get `storyId` from Articulate Review page execute this bookmarklet:
+
+```javascript
+javascript:!function(){var e=document.querySelector("iframe.player").src.replace(/\/story(.*?)$/,""),t=e.substring(e.lastIndexOf("/")+1);!function(e){var t=document.createElement("textarea");t.value=e,t.setAttribute("readonly",""),t.style.position="absolute",t.style.left="-9999px",document.body.appendChild(t);var o=document.getSelection(),n=0<o.rangeCount&&o.getRangeAt(0);t.select(),document.execCommand("copy"),document.body.removeChild(t),n&&((o=document.getSelection()).removeAllRanges(),o.addRange(n))}(t),window.alert("Story id copied to clipboard: "+t)}();
+```
