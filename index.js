@@ -7,7 +7,7 @@ const download = require('./lib/download');
 const rimraf = promisify(require('rimraf'));
 const tempy = require('tempy');
 
-module.exports = async function createArchiveStream(storyId) {
+module.exports = async function createZipStream(storyId) {
   const tempDir = tempy.directory();
   const results = await download(storyId, tempDir);
   const archive = new ZipFile();

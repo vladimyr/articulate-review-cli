@@ -2,7 +2,7 @@
 
 'use strict';
 
-const createArchiveStream = require('.');
+const createZipStream = require('.');
 const fs = require('fs');
 const green = require('ansi-green');
 const meow = require('meow');
@@ -27,6 +27,6 @@ const flags = {
 (async () => {
   const cli = meow(help, { flags });
   const [storyId, archivePath] = cli.input;
-  const stream = await createArchiveStream(storyId);
+  const stream = await createZipStream(storyId);
   stream.pipe(fs.createWriteStream(archivePath));
 })();
