@@ -35,6 +35,7 @@
   "homepage": "https://github.com/vladimyr/articulate-review-cli",
   "dependencies": {
     "ansi-green": "^0.1.1",
+    "ansi-red": "^0.1.1",
     "debug": "^3.1.0",
     "gauge": "^2.7.4",
     "got": "^9.0.0",

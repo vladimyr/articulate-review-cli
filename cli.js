@@ -7,6 +7,7 @@ const createZipStream = require('.');
 const fs = require('fs');
 const Gauge = require('gauge');
 const green = require('ansi-green');
+const red = require('ansi-red');
 const meow = require('meow');
 const path = require('path');
 const pkg = require('./package.json');
@@ -39,6 +40,8 @@ const Status = {
 (async () => {
   const cli = meow(help, { flags });
   const [storyId, archivePath] = cli.input;
+  ensures(cli, storyId, 'storyId');
+  ensures(cli, archivePath, 'archivePath');
   console.log(`Downloading storyline from ${green('Articulate Review')}...`);
   const gauge = new Gauge();
   const stream = await createZipStream(storyId, onProgress);
@@ -57,3 +60,9 @@ const Status = {
     console.log(`Storyline ${green(storyId)} successfully downloaded to ${green(dest)}`);
   }
 })();
+
+function ensures(cli, val, name) {
+  if (val) return;
+  console.error(message('🚨', `${red('Error:')} Missing argument <${name}>`));
+  cli.showHelp();
+}
