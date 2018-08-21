@@ -27,10 +27,13 @@ const flags = {
   version: { alias: 'v' }
 };
 
+const isMacOS = process.platform === 'darwin';
+const message = (emoji, msg) => isMacOS ? `${emoji} ${msg}` : msg;
+
 const Status = {
-  [Section.READ]: 'Reading remote data',
-  [Section.DOWNLOAD]: 'Downloading storyline files',
-  [Section.PACKAGE]: 'Creating storyline package'
+  [Section.READ]: message('🔍', 'Reading remote data'),
+  [Section.DOWNLOAD]: message('⏬', 'Downloading storyline files'),
+  [Section.PACKAGE]: message('📦', 'Creating storyline package')
 };
 
 (async () => {
