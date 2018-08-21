@@ -36,6 +36,7 @@
   "dependencies": {
     "ansi-green": "^0.1.1",
     "debug": "^3.1.0",
+    "gauge": "^2.7.4",
     "got": "^9.0.0",
     "meow": "^5.0.0",
     "p-map": "^1.2.0",
